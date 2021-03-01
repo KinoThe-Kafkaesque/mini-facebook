@@ -24,9 +24,9 @@ public class Status implements Serializable {
 		private String dateStatuString;
 	
 		@OneToMany (mappedBy = "status" )
-		CommentaireStatus commentaireStatus;
+		private CommentaireStatus commentaireStatus;
 		@ManyToOne 
-		User user;
+	    private	User user;
 		
 		
 		public long getId() {
