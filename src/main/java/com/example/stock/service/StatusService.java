@@ -23,7 +23,7 @@ public class StatusService {
 	}
 	
     public int save(Status status) {
-        if (findByCode(status.getCodeString()) != null) {
+        if (findByCode(status.getCode()) != null) {
             return -1;
         } else {
             statusDao.save(status);
