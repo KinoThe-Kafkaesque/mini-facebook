@@ -1,12 +1,12 @@
 package com.example.stock.bean;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
@@ -24,7 +24,7 @@ public class Status implements Serializable {
 		private String dateStatus;
 	
 		@OneToMany (mappedBy = "status" )
-		private CommentaireStatus commentaireStatus;
+		private List<CommentaireStatus> commentaireStatus;
 		@ManyToOne 
 	    private	User user;
 		public long getId() {
@@ -69,10 +69,10 @@ public class Status implements Serializable {
 		public void setDateStatus(String dateStatus) {
 			this.dateStatus = dateStatus;
 		}
-		public CommentaireStatus getCommentaireStatus() {
+		public List<CommentaireStatus> getCommentaireStatus() {
 			return commentaireStatus;
 		}
-		public void setCommentaireStatus(CommentaireStatus commentaireStatus) {
+		public void setCommentaireStatus(List<CommentaireStatus> commentaireStatus) {
 			this.commentaireStatus = commentaireStatus;
 		}
 		public User getUser() {
@@ -81,6 +81,8 @@ public class Status implements Serializable {
 		public void setUser(User user) {
 			this.user = user;
 		}
+		
+		
 		
 	
 }
